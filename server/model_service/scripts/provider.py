@@ -3,6 +3,8 @@ from transformers import AutoTokenizer
 from huggingface_hub import hf_hub_download
 from .model import CustomModel
 
+# create functions for data validation and inference
+
 MODEL_ID = "nvidia/prompt-task-and-complexity-classifier"
 
 # Download NVIDIA's custom config.json
