@@ -2,10 +2,14 @@ import json
 from transformers import AutoTokenizer
 from huggingface_hub import hf_hub_download
 from .model import CustomModel
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # create functions for data validation and inference
 
-MODEL_ID = "nvidia/prompt-task-and-complexity-classifier"
+MODEL_ID = os.getenv("MODEL_ID")
 
 # Download NVIDIA's custom config.json
 config_path = hf_hub_download(

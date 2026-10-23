@@ -2,9 +2,13 @@ from scripts.model import CustomModel
 from huggingface_hub import hf_hub_download
 from transformers import AutoTokenizer
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def load_model():
-    MODEL_ID = "nvidia/prompt-task-and-complexity-classifier"
+    MODEL_ID = os.getenv("MODEL_ID")
 
     config_path = hf_hub_download(
         repo_id = MODEL_ID,
@@ -35,7 +39,7 @@ def load_model():
 
     model.eval()
 
-    return model, tokenizer
+    return model, tokenizer, True
 
 
 

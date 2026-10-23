@@ -5,7 +5,7 @@ from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
-model,tokenizer = load_model()
+model,tokenizer,_ = load_model()
 
 
 @app.get("/")
@@ -45,6 +45,6 @@ if __name__ == "__main__":
     uvicorn.run(
         "main:app",
         host = "0.0.0.0",
-        port = 8000,
+        port = 8001,
         log_level = "info"
     )

@@ -23,7 +23,7 @@ def inference(model, tokenizer, prompt):
     return result
 
 if __name__ == "__main__":
-    model, tokenizer = load_model()
-    prompt = "Who is the president of India ?"
+    model, tokenizer, _ = load_model()
+    prompt = "Who is the president of India"
     result = inference(model, tokenizer, prompt)
     print(result)
